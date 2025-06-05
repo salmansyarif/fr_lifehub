@@ -496,18 +496,22 @@ export default function index() {
         </View>
       </Modal>
 
-      {/* Modal validasi gagal */}
-      <Modal transparent visible={modalValidasiGagal} animationType="fade">
-        <View style={tw`flex-1 bg-black bg-opacity-75 justify-center items-center p-6`}>
-          <View style={tw`bg-red-700 rounded-xl p-6 w-full max-w-xs`}>
-            <Text style={tw`text-gray-900 mb-6 text-center text-lg`}>
-              Validation failed! Make sure activity name is at least 3 characters and date is in YYYY-MM-DD format.
+    <Modal
+        visible={modalValidasiGagal}
+        transparent
+        animationType="fade"
+        onRequestClose={() => setModalValidasiGagal(false)}
+      >
+        <View style={tw`flex-1 bg-black bg-opacity-70 justify-center items-center p-6`}>
+          <View style={tw`bg-gray-800 rounded-3xl p-6 w-full max-w-sm`}>
+            <Text style={tw`text-amber-400 text-lg mb-6 text-center`}>
+              Input tidak valid. Mood minimal 3 karakter, tanggal harus dalam format YYYY-MM-DD.
             </Text>
             <TouchableOpacity
-              style={tw`bg-gray-900 p-4 rounded-2xl`}
+              style={tw`bg-amber-600 px-6 py-3 rounded-2xl`}
               onPress={() => setModalValidasiGagal(false)}
             >
-              <Text style={tw`text-amber-400 text-center font-bold`}>OK</Text>
+              <Text style={tw`text-gray-900 font-bold text-center`}>OK</Text>
             </TouchableOpacity>
           </View>
         </View>
