@@ -20,7 +20,7 @@ export default function NewsList() {
     try {
       setLoading(true); // Tampilkan loading
       const response = await axios.get(
-        'https://newsapi.org/v2/top-headlines?country=us&apiKey=b67226388eca4095844c27e34188bd4b'
+       'https://newsapi.org/v2/top-headlines?country=us&apiKey=08a2e66c7c114f138b6e60707f745c83' 
       );
       setArticles(response.data.articles);
     } catch (error) {
